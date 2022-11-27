@@ -17,19 +17,23 @@ namespace api.Controllers
         public List<Company> Get()
         {
             List<Company> companies = new List<Company>();
-            Company myCompany = new Company();
-            myCompany.Name = "Disney";
-            myCompany.Ticker = "DISN";
-            myCompany.SharePrice = 5.00;
+            // Company myCompany = new Company();
+            // myCompany.Name = "Disney";
+            // myCompany.Ticker = "DISN";
+            // myCompany.SharePrice = 5.00;
 
-            Company yourCompany = new Company();
-            yourCompany.Name = "Apple";
-            yourCompany.Ticker = "APPL";
-            yourCompany.SharePrice = 5.00;
+            // Company yourCompany = new Company();
+            // yourCompany.Name = "Apple";
+            // yourCompany.Ticker = "APPL";
+            // yourCompany.SharePrice = 5.00;
 
-            companies.Add(myCompany);
-            companies.Add(yourCompany);
+            // companies.Add(myCompany);
+            // companies.Add(yourCompany);
 
+            // return companies;
+
+            CompanyUtility utility = new CompanyUtility(companies);
+            utility.GetAllCompanies();
             return companies;
         }
        
