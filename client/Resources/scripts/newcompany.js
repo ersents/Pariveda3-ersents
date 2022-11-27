@@ -1,5 +1,7 @@
+const baseUrl = "https://localhost:7214/api/Company";
+
 function getCompany(){
-    const allCompanysApiUrl = "https://localhost:7214/api/Company";
+    
 
     fetch(allCompanysApiUrl).then(function(response){
         console.log(response);
@@ -7,7 +9,7 @@ function getCompany(){
     }).then(function(json){
         let html = "<ul>";
         json.forEach((company)=>{
-            html += "<li>" + company.Name + "ticker symbol" + company.Ticker + company.sharePrice + "</li>";
+            html += "<li>" + company.Name + company.Ticker + company.sharePrice + "</li>";
         });
         html += "</ul>";
         document.getElementById("companies").innerHTML = html;
@@ -21,9 +23,9 @@ function putCompany(companies){
     const allCompanysApiUrl = baseUrl;
     const sendCompany = {
 
-        name: document.getElementById("Name").value,
-        ticker: document.getElementById("Ticker").value,
-        sharePrice: document.getElementById("Share Price").value,
+        name: document.getElementById("companyname").value,
+        ticker: document.getElementById("ticker").value,
+        sharePrice: document.getElementById("shareprice").value,
         
     }
     fetch(allCompanysApiUrl, {
@@ -34,7 +36,7 @@ function putCompany(companies){
         },
         body: JSON.stringify(sendCompany)
     })
-    .then((response)=>{
+    .then((response)=>{ //declared but never used, where would i use this
         companies = sendCompany;
         populateList();
         populateForm();
@@ -42,11 +44,20 @@ function putCompany(companies){
 
 }
 
-function postBook(){
+function PostCompany(){
+    var companyName = document.getElementById("companyname").value;
+    var companyTicker = document.getElementById("ticker").value;
+    var companySharePrice = document.getElementById("shareprice").value;
+     alert("Company: " +companyName + " Ticker: " +companyTicker+ " Share Price: "+companySharePrice)
+  
+}
+
+
+function PostCompany2(){
     const postCompanysApiUrl = baseUrl;
-    const companyName = document.getElementById("Name").value;
-    const companyTicker = document.getElementById("Ticker").value;
-    const companySharePrice = document.getElementById("SharePrice").value;
+    const companyName = document.getElementById("companyname").value;
+    const companyTicker = document.getElementById("ticker").value;
+    const companySharePrice = document.getElementById("shareprice").value;
     
     fetch(postCompanysApiUrl, {
         method: "POST",
@@ -59,9 +70,9 @@ function postBook(){
             ticker: companyTicker,
             sharePrice: companySharePrice
         })
-})
-.then((response)=>{
+    })
+    .then((response)=>{
     console.log(response);
-    getCompany();
-});
+    // getCompany();
+    });
 }

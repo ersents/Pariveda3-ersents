@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New Company</title>
-    <link rel="stylesheet" href="./Resources/css/style.css">
-    <script type="text/javascript" lang="Javascript" src="./Resources/scripts/newcompany.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    
+    <script type="text/javascript" lang="Javascript" src="./scripts/newcompany.js"></script>
 </head>
 <body>
     
@@ -16,16 +17,16 @@
         <label class="logo"><a href="./index.html">Raelee's Financial Hub</a></label>
     </nav>
     <nav>
-        <form onsubmit="false" method="post">
+        <form onsubmit="return false" method="post">
             <label for="companyname">Company Name:</label>
             <input type="text" id="companyname" name="companyname"><br>
             <label for="ticker">Ticker Symbol:</label>
             <input type="text" id="ticker" name="ticker"><br>
             <label for="shareprice">Share Price:</label>
             <input type="text" id="shareprice" name="shareprice"><br>
-            <input id="submit" type="submit" value="Submit" onclick="PostBook()">
+            <input id="submit" type="submit" value="Submit" onclick="PostCompany()">
+            
         </form>
     </nav>
-    <nav></nav>
-</body>
-</html>
+   </body>
+</head>

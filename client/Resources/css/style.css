@@ -9,7 +9,7 @@
 body{
     font-family: 'Times New Roman', Times, serif;
     
-        /* background-image: url('../stockmarketgraph.jpg'); */
+        background-image: url('../stockmarketgraph.jpg');
         background-size: cover;
         background-position: center;
         background-attachment: fixed;

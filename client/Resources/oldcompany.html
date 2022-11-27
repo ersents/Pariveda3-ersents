@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script type="text/javascript" lang="Javascript" src="./scripts/oldcompany.js"></script>
+</head>
+<body>
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn"></label>
+        <label class="logo"><a href="./index.html">Raelee's Financial Hub</a></label>
+    </nav>
+    <nav>
+        <h2>Company Look Up</h2>
+        
+            <form onsubmit="return false" method="post">
+                <label for="companyname">Company Name:</label>
+                <input type="text" id="companyname" name="companyname"><br>
+                <input id="submit" type="submit" value="Submit" onclick="PostCompany()">
+            </form>
+    </nav>
+</body>
+</html>
