@@ -58,6 +58,7 @@ function PostCompany2(){
     const companyName = document.getElementById("companyname").value;
     const companyTicker = document.getElementById("ticker").value;
     const companySharePrice = document.getElementById("shareprice").value;
+    console.log(companyName, companyTicker, companySharePrice)
     
     fetch(postCompanysApiUrl, {
         method: "POST",
@@ -66,9 +67,9 @@ function PostCompany2(){
             "Content-Type": 'application/json',
         },
         body: JSON.stringify({
-            name: companyName,
-            ticker: companyTicker,
-            sharePrice: companySharePrice
+            Name: companyName,
+            Ticker: companyTicker,
+            SharePrice: companySharePrice
         })
     })
     .then((response)=>{

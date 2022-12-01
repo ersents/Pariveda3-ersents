@@ -22,9 +22,20 @@ function getAllCompanies(){
 }
 
 function createTable(companies){
-    let html = ''
+    let html = `<table class="table table-dark table-striped">
+                    <tr>
+                        <th>Company</th>
+                        <th>Ticker</th>
+                        <th>Shareprice</th>
+                    </tr>`
+
     companies.forEach(company => {
-        html += `<p><b>${company.name}    ${company.ticker}    ${company.sharePrice} </b></p>`
+        html += `<tr>
+                    <td>${company.name}</td>
+                    <td>${company.ticker}</td>
+                    <td>${company.sharePrice}</td>
+                </tr>`
     });
+    html += `</table>`
     document.getElementById("companyList").innerHTML = html
 }

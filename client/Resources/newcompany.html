@@ -7,6 +7,7 @@
     <title>New Company</title>
     <link rel="stylesheet" href="./css/style.css">
     
+    
     <script type="text/javascript" lang="Javascript" src="./scripts/newcompany.js"></script>
 </head>
 <body>
@@ -15,17 +16,38 @@
         <input type="checkbox" id="check">
         <label for="check" class="checkbtn"></label>
         <label class="logo"><a href="./index.html">Raelee's Financial Hub</a></label>
+        <div class="topnav">
+            <ul>
+                <li><a href="#" class="active"></a></li>
+                <li><a href="./newcompany.html">New Company</a></li>
+                <li><a href="./oldcompany.html">Old Company</a></li>
+                <!-- <li><a href="./about.html">About</a></li> -->
+            </ul>
+        </div>
     </nav>
     <nav>
         <form onsubmit="return false" method="post">
+            <div class="col-25">
             <label for="companyname">Company Name:</label>
+            </div>
+            <div class="col-75">
             <input type="text" id="companyname" name="companyname"><br>
+            </div>
+            <div class="col-25">
             <label for="ticker">Ticker Symbol:</label>
+            </div>
+            <div class="col-75">
             <input type="text" id="ticker" name="ticker"><br>
+            </div>
+            <div class="col-25">
             <label for="shareprice">Share Price:</label>
+            </div>
+            <div class="col-75">
             <input type="text" id="shareprice" name="shareprice"><br>
-            <input id="submit" type="submit" value="Submit" onclick="PostCompany()">
-            
+            </div>
+            <div class="submit">
+            <input id="submit" type="submit" value="Submit" onclick="PostCompany2()">
+            </div>
         </form>
     </nav>
    </body>

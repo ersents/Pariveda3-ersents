@@ -47,8 +47,9 @@ namespace api.Controllers
 
         // POST: api/Company
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] Company company)
         {
+            System.Console.WriteLine(company.Name);
         }
 
         // PUT: api/Company/5
