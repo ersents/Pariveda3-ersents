@@ -8,6 +8,10 @@ namespace api
             companies = temp;
         }
 
+        public CompanyUtility(){
+            
+        }
+
         public void GetAllCompanies(){
             StreamReader inFile = new StreamReader("companies.txt");
 
@@ -29,5 +33,16 @@ namespace api
             }
             inFile.Close();
         }
+
+        public void SaveCompany(Company company){
+
+            StreamWriter outFile = new StreamWriter("companies.txt", true);
+            outFile.WriteLine();
+            outFile.Write(company.Name+"#"+company.Ticker+"#"+company.SharePrice);
+            outFile.Close();
+        }
+
     }
+
+
 }

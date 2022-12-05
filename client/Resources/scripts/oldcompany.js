@@ -1,4 +1,5 @@
-const baseUrl = 'https://localhost:7214/api/company'      
+const baseUrl = 'https://localhost:7214/api/company'   
+
 
 function PostCompany(){
     var companyName = document.getElementById("companyname").value;
@@ -22,20 +23,40 @@ function getAllCompanies(){
 }
 
 function createTable(companies){
-    let html = `<table class="table table-dark table-striped">
+    let html = `<table class="table table-dark table-hover" style="margin-top:150px">
+                <thead>
                     <tr>
                         <th>Company</th>
                         <th>Ticker</th>
                         <th>Shareprice</th>
-                    </tr>`
+                        <th>Delete</th>
+                    </tr>
+                </thead>`
 
     companies.forEach(company => {
-        html += `<tr>
+        html += `<tbody>
+                <tr>
                     <td>${company.name}</td>
                     <td>${company.ticker}</td>
                     <td>${company.sharePrice}</td>
-                </tr>`
+                    <td><button onclick="deleteCompany()">Delete</button></td>";
+                </tr>
+                </tbody>`
     });
     html += `</table>`
     document.getElementById("companyList").innerHTML = html
+}
+function deleteCompany(name="jeff"){
+    console.log('made it to the delete')
+    const deleteCompaniesApiUrl = baseUrl + "/" + name;
+    fetch(deleteCompaniesApiUrl, {
+        method: "DELETE",
+        headers: {
+            "Accept": 'application/json',
+            "Content-Type": 'application/json',
+        }
+    })
+    .then((response)=>{
+        getAllCompanies();
+    });
 }

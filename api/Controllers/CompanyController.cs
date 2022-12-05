@@ -50,6 +50,8 @@ namespace api.Controllers
         public void Post([FromBody] Company company)
         {
             System.Console.WriteLine(company.Name);
+            CompanyUtility utility = new CompanyUtility();
+            utility.SaveCompany(company);
         }
 
         // PUT: api/Company/5
@@ -59,9 +61,10 @@ namespace api.Controllers
         }
 
         // DELETE: api/Company/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpDelete("{name}")]
+        public void Delete(string name)
         {
+            Console.WriteLine(name);
         }
     }
 }

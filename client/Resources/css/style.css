@@ -46,6 +46,7 @@ nav{
     line-height: 80px;
     padding: 0 100px;
     font-weight: bold;
+    text-decoration: none;
    
 }
 li{
@@ -166,12 +167,24 @@ input[type=submit] {
     padding-top: 100px;
     padding-left: 50px;
   }
+  
   .white{
     color: white;
     padding-top: 375px;
     padding-left: 50px;
     font-size: 30px;
   }
+  a:link { text-decoration: none; }
+
+
+  a:visited { text-decoration: none; }
+  
+  
+  a:hover { text-decoration: none; }
+  
+  
+  a:active { text-decoration: none; }
+ 
   
 
   
