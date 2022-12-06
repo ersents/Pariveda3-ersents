@@ -39,7 +39,7 @@ function createTable(companies){
                     <td>${company.name}</td>
                     <td>${company.ticker}</td>
                     <td>${company.sharePrice}</td>
-                    <td><button onclick="deleteCompany()">Delete</button></td>";
+                    <td><button onclick="deleteCompany('${company.name}')">Delete</button></td>";
                     
                 </tr>
                 </tbody>`
