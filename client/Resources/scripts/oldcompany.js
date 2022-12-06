@@ -40,13 +40,14 @@ function createTable(companies){
                     <td>${company.ticker}</td>
                     <td>${company.sharePrice}</td>
                     <td><button onclick="deleteCompany()">Delete</button></td>";
+                    
                 </tr>
                 </tbody>`
     });
     html += `</table>`
     document.getElementById("companyList").innerHTML = html
 }
-function deleteCompany(name="jeff"){
+function deleteCompany(name = "Mike"){
     console.log('made it to the delete')
     const deleteCompaniesApiUrl = baseUrl + "/" + name;
     fetch(deleteCompaniesApiUrl, {

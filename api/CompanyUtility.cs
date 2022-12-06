@@ -42,6 +42,27 @@ namespace api
             outFile.Close();
         }
 
+        public void DeleteCompany(Company company) 
+        {
+            string tempFile = Path.GetTempFileName();
+            using(var inFile = new StreamReader(@"companies.txt"))
+            using(var outFile = new StreamWriter(tempFile))
+            {
+                string line = inFile.ReadLine();
+                while(line != null)
+                {
+                    string[] temp = line.Split('#');
+                    if(temp[0] != company.Name)
+                    {
+                        outFile.WriteLine(line);
+                    }
+                    line = inFile.ReadLine();
+                }
+            }
+            File.Delete("companies.txt");
+            File.Move(tempFile, "companies.txt");
+        }
+
     }
 
 
