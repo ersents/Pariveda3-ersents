@@ -42,7 +42,7 @@ namespace api
             outFile.Close();
         }
 
-        public void DeleteCompany(Company company) 
+        public void DeleteCompany(string name) 
         {
             string tempFile = Path.GetTempFileName();
             using(var inFile = new StreamReader(@"companies.txt"))
@@ -52,7 +52,7 @@ namespace api
                 while(line != null)
                 {
                     string[] temp = line.Split('#');
-                    if(temp[0] != company.Name)
+                    if(temp[0] != name)
                     {
                         outFile.WriteLine(line);
                     }

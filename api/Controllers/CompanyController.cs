@@ -50,6 +50,8 @@ namespace api.Controllers
         public void Delete(string name)
         {
             Console.WriteLine(name);
+            CompanyUtility utility = new CompanyUtility();
+            utility.DeleteCompany(name);
             
         }
     }
